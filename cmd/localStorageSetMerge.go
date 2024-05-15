@@ -22,8 +22,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/IceWhaleTech/CasaOS-CLI/codegen/local_storage"
-	"github.com/IceWhaleTech/CasaOS-Common/utils"
+	"github.com/Vioneta/VionetaOS-CLI/codegen/local_storage"
+	"github.com/Vioneta/VionetaOS-Common/utils"
 	"github.com/spf13/cobra"
 )
 

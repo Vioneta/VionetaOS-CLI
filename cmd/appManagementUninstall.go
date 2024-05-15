@@ -21,8 +21,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/IceWhaleTech/CasaOS-CLI/codegen/app_management"
-	"github.com/IceWhaleTech/CasaOS-Common/utils"
+	"github.com/Vioneta/VionetaOS-CLI/codegen/app_management"
+	"github.com/Vioneta/VionetaOS-Common/utils"
 	"github.com/spf13/cobra"
 )
 

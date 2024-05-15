@@ -22,7 +22,7 @@ limitations under the License.
 package main
 
 import (
-	"github.com/IceWhaleTech/CasaOS-CLI/cmd"
+	"github.com/Vioneta/VionetaOS-CLI/cmd"
 )
 
 var (

@@ -21,7 +21,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/IceWhaleTech/CasaOS-CLI/codegen/app_management"
+	"github.com/Vioneta/VionetaOS-CLI/codegen/app_management"
 	"github.com/spf13/cobra"
 )
 
