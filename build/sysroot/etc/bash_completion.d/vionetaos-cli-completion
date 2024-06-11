@@ -2,5 +2,5 @@
 
 if [[ -e /usr/bin/casaos-cli ]]; then
     # shellcheck source=/dev/null
-    source <(/usr/bin/casaos-cli completion bash)
+    source <(/usr/bin/vionetaos-cli completion bash)
 fi
