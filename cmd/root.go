@@ -1,5 +1,5 @@
 /*
-Copyright © 2022 IceWhaleTech
+Copyright © 2022 Vioneta
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ import (
 )
 
 const (
-	BasePathCasaOS = "v2/casaos"
+	BasePathVionetaOS = "v2/vionetaos"
 
 	FlagDir     = "dir"
 	FlagDryRun  = "dry-run"
@@ -35,10 +35,10 @@ const (
 	FlagForce   = "force"
 	FlagRootURL = "root-url"
 
-	GatewayPath = "/etc/casaos/gateway.ini"
+	GatewayPath = "/etc/vionetaos/gateway.ini"
 
 	DefaultTimeout = 10 * time.Second
-	RootGroupID    = "casaos-cli"
+	RootGroupID    = "vionetaos-cli"
 )
 
 var (
@@ -51,8 +51,8 @@ var (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "casaos-cli",
-	Short: "A command line interface for CasaOS",
+	Use:   "vionetaos-cli",
+	Short: "A command line interface for VionetaOS",
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
@@ -70,7 +70,7 @@ func Execute() {
 func init() {
 	url := ""
 
-	rootCmd.PersistentFlags().StringP(FlagRootURL, "u", "", "root url of CasaOS API")
+	rootCmd.PersistentFlags().StringP(FlagRootURL, "u", "", "root url of VionetaOS API")
 
 	if rootCmd.PersistentFlags().Changed(FlagRootURL) {
 		url = rootCmd.PersistentFlags().Lookup(FlagRootURL).Value.String()

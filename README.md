@@ -1,7 +1,5 @@
 # VionetaOS-CLI
 
-
-
 A command-line tool to interact with VionetaOS for testing and diagnosing purpose
 
 ## Usage
@@ -24,7 +22,7 @@ Additional Commands:
 
 Flags:
   -h, --help              help for vionetaos-cli
-  -u, --root-url string   root url of CasaOS API (default "localhost:80")
+  -u, --root-url string   root url of VionetaOS API (default "localhost:80")
 
 Additional help topics:
   vionetaos-cli gateway        All gateway related commands
@@ -41,50 +39,49 @@ Follow example steps below to add commands like `vionetaos-cli message-bus list 
 
 1. create command scaffold with `cobra-cli add`:
 
-    ```shell
-    go run github.com/spf13/cobra-cli@latest add messageBus --config .cobra.yaml
-    go run github.com/spf13/cobra-cli@latest add messageBusList -p messageBusCmd --config .cobra.yaml
-    go run github.com/spf13/cobra-cli@latest add messageBusListEventTypes -p messageBusListCmd --config .cobra.yaml
-    ```
+   ```shell
+   go run github.com/spf13/cobra-cli@latest add messageBus --config .cobra.yaml
+   go run github.com/spf13/cobra-cli@latest add messageBusList -p messageBusCmd --config .cobra.yaml
+   go run github.com/spf13/cobra-cli@latest add messageBusListEventTypes -p messageBusListCmd --config .cobra.yaml
+   ```
 
-    > It is important to include `--config .cobra.yaml` to attribute the scaffold code with correct license header.
+   > It is important to include `--config .cobra.yaml` to attribute the scaffold code with correct license header.
 
 2. update each `messageBus*.go` file with correct command format:
 
-    ```go
-    // messageBus.go
-    Use:   "messageBus",
-    // messageBusList.go
-    Use:   "messageBusList",
-    // messageBusListEventTypes.go
-    Use:   "messageBusListEventTypes",
-    ```
+   ```go
+   // messageBus.go
+   Use:   "messageBus",
+   // messageBusList.go
+   Use:   "messageBusList",
+   // messageBusListEventTypes.go
+   Use:   "messageBusListEventTypes",
+   ```
 
-    becomes
+   becomes
 
-    ```go
-    // messageBus.go
-    Use:   "message-bus",
-    // messageBusList.go
-    Use:   "list",
-    // messageBusListEventTypes.go
-    Use:   "event-types",
-    ```
+   ```go
+   // messageBus.go
+   Use:   "message-bus",
+   // messageBusList.go
+   Use:   "list",
+   // messageBusListEventTypes.go
+   Use:   "event-types",
+   ```
 
 3. update short and long description for each command, and implement the logics
 
 4. to verify the commands are created correctly, run
 
-    ```shell
-    $ go run main.go message-bus list event-types --help
-    list event types
+   ```shell
+   $ go run main.go message-bus list event-types --help
+   list event types
 
-    Usage:
-    vionetaos-cli message-bus list event-types [flags]
+   Usage:
+   vionetaos-cli message-bus list event-types [flags]
 
-    Flags:
-    -h, --help   help for event-types
-    ```
+   Flags:
+   -h, --help   help for event-types
+   ```
 
 > Run `go run github.com/spf13/cobra-cli@latest --help` to see additional help message.
-

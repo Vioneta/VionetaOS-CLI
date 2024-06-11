@@ -1,5 +1,5 @@
 /*
-Copyright © 2023 IceWhaleTech
+Copyright © 2023 Vioneta
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -34,17 +34,17 @@ var appManagementSetGlobalCmd = &cobra.Command{
 This is useful for compose apps that need the same environment variables. Instead of specifying
 an environment variable multiple time for each app, it can be set globally for convenience.
 
-Global environment variables are stored at 'env' file at CasaOS configuration path, e.g. /etc/casaos/env
+Global environment variables are stored at 'env' file at VionetaOS configuration path, e.g. /etc/vionetaos/env
 
 Note: If the compose app already has an environment variable with identical name defined in its
       docker-compose.yaml file, then the global environment variable will be ignored.
 	`,
 	Example: `
 # set API Key for OpenAI related apps
-$ casaos-cli app-management set global OPENAI_API_KEY sk-xxxxxxxxxx
+$ vionetaos-cli app-management set global OPENAI_API_KEY sk-xxxxxxxxxx
 
 # show all global environment variables
-$ casaos-cli app-management show global
+$ vionetaos-cli app-management show global
 Global Key       Global Value
 --------------   ------------
 OPENAI_API_KEY   sk-xxxxxxxxxx   

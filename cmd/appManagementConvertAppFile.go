@@ -1,5 +1,5 @@
 /*
-Copyright © 2023 IceWhaleTech
+Copyright © 2023 Vioneta
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -65,7 +65,7 @@ var appManagementConvertAppFileCmd = &cobra.Command{
 
 		response, err := client.ConvertWithBodyWithResponse(ctx, &params, MINEApplicationJSON, file)
 		if err != nil {
-			fmt.Println("Error: Unable to reach CasaOS API. Try convert locally using `appfile2compose` command.")
+			fmt.Println("Error: Unable to reach VionetaOS API. Try convert locally using `appfile2compose` command.")
 			return err
 		}
 
