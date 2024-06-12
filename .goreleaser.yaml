@@ -1,6 +1,6 @@
 # This is an example .goreleaser.yml file with some sensible defaults.
 # Make sure to check the documentation at https://goreleaser.com
-project_name: VionetaOS-cli
+project_name: vionetaos-cli
 before:
   hooks:
   - go generate
@@ -8,8 +8,8 @@ before:
   - go mod tidy
   - go test -race -v ./...
 builds:
-- id: VionetaOS-cli-amd64
-  binary: build/sysroot/usr/bin/VionetaOS-cli
+- id: vionetaos-cli-amd64
+  binary: build/sysroot/usr/bin/vionetaos-cli
   hooks:
     post:
     - upx --best --lzma -v --no-progress "{{ .Path }}"
@@ -29,8 +29,8 @@ builds:
   - linux
   goarch:
   - amd64
-- id: VionetaOS-cli-arm64
-  binary: build/sysroot/usr/bin/VionetaOS-cli
+- id: vionetaos-cli-arm64
+  binary: build/sysroot/usr/bin/vionetaos-cli
   hooks:
     post:
     - upx --best --lzma -v --no-progress "{{ .Path }}"
@@ -50,8 +50,8 @@ builds:
   - linux
   goarch:
   - arm64
-- id: VionetaOS-cli-arm-7
-  binary: build/sysroot/usr/bin/VionetaOS-cli
+- id: vionetaos-cli-arm-7
+  binary: build/sysroot/usr/bin/vionetaos-cli
   hooks:
     post:
     - upx --best --lzma -v --no-progress "{{ .Path }}"
@@ -76,11 +76,11 @@ builds:
 archives:
 - name_template: >-
     {{ .Os }}-{{- if eq .Arch "arm" }}arm-7{{- else }}{{ .Arch }}{{- end }}-{{ .ProjectName }}-v{{ .Version }}
-  id: VionetaOS-cli
+  id: vionetaos-cli
   builds:
-  - VionetaOS-cli-amd64
-  - VionetaOS-cli-arm64
-  - VionetaOS-cli-arm-7
+  - vionetaos-cli-amd64
+  - vionetaos-cli-arm64
+  - vionetaos-cli-arm-7
   files:
   - build/**/*
 checksum:
@@ -96,7 +96,7 @@ changelog:
 release:
   github:
     owner: Vioneta
-    name: VionetaOS-CLI
+    name: vionetaos-CLI
   draft: true
   prerelease: auto
   mode: replace
